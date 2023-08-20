@@ -136,3 +136,4 @@ Iterative Simulation:
 
 Perform iterations between calculating hot gas-side heat flux (using StUeeρ) and coolant-side heat flux to achieve convergence.
 Calculate wall temperatures and coolant thermal characteristics using the interpolated StUeeρ values.
+
