@@ -1,0 +1,44 @@
+Constants and Parameters:
+
+chamber_length: The length of the combustion chamber.
+coolant_channel_length: The length of each coolant channel.
+num_channels: The number of coolant channels based on the chamber and coolant channel length.
+chamber_inner_radius: The inner radius of the chamber.
+chamber_outer_radius: The outer radius of the chamber.
+coolant_channel_width: The width of each coolant channel.
+wall_thickness: The thickness of the chamber wall.
+wall_conductivity: The thermal conductivity of the chamber wall material.
+coolant_specific_heat: The specific heat capacity of the coolant.
+coolant_density: The density of the coolant.
+coolant_velocity: The velocity of the coolant.
+gas_side_heat_transfer_coeff: The heat transfer coefficient on the gas side.
+coolant_side_heat_transfer_coeff: The heat transfer coefficient on the coolant side.
+gas_temperature: The initial gas temperature.
+heat_flux: The initial heat flux based on the gas side heat transfer coefficient and temperature difference.
+Arrays and Variables:
+
+wall_temperatures: An array to store wall temperatures for each coolant channel.
+Heat Transfer Calculations:
+
+The script starts by initializing the wall_temperatures array with the initial gas temperature for the first channel.
+It calculates the temperature change on the gas side using the formula:
+delta_temperature_gas = (Heat Flux / (2 * π * Inner Radius * Coolant Channel Length * Wall Thickness)) - (Gas Temperature - Previous Wall Temperature)) / (Gas-Side Heat Transfer Coefficient * Wall Thickness)
+This calculates how the gas temperature changes along the channel due to heat transfer.
+It updates the gas temperature based on the calculated change.
+It then calculates the temperature change on the coolant side using the formula:
+delta_temperature_coolant = (Heat Flux / (Coolant-Side Heat Transfer Coefficient * Coolant Channel Width * Coolant Channel Length)) - (Previous Wall Temperature - Current Wall Temperature)) / (Coolant Specific Heat * Coolant Density * Coolant Velocity * Coolant Channel Width)
+This calculates how the wall temperature changes along the channel due to heat transfer from the coolant.
+It updates the wall temperature based on the calculated change.
+Plotting:
+
+Finally, the script plots the temperature distribution along the chamber wall using matplotlib.
+Output:
+
+The script generates a plot showing the temperature distribution along the combustion chamber's wall. It starts with the initial gas temperature at the chamber entrance and calculates how the temperature changes along the chamber's length.
+The x-axis represents the distance along the chamber, and the y-axis represents the temperature in Kelvin.
+This output gives you an idea of how the temperature changes along the chamber wall due to heat transfer between the combustion gases and the coolant flowing through the channels. 
+The temperature decreases as heat is transferred from the gases to the coolant.
+
+
+
+
